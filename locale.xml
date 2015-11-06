@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/piwik" datatype="php,js">
+        <locale name="piwik.settings.title">
+            <de><![CDATA[Piwik]]></de>
+            <en><![CDATA[Piwik]]></en>
+        </locale>
+        <locale name="piwik.settings.general.title">
+            <de><![CDATA[Piwik Einstellungen]]></de>
+            <en><![CDATA[Piwik settings]]></en>
+        </locale>
+        <locale name="piwik.settings.url">
+            <de><![CDATA[Piwik URL]]></de>
+            <en><![CDATA[Piwik url]]></en>
+        </locale>
+        <locale name="piwik.settings.id">
+            <de><![CDATA[Piwik Seiten ID]]></de>
+            <en><![CDATA[Piwik site ID]]></en>
+        </locale>
+    </groups>
+</locales>

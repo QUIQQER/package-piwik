@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <project>
+
+        <settings>
+            <config>
+                <section name="piwik.settings">
+                    <conf name="url">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="id">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                </section>
+            </config>
+
+            <window>
+                <categories>
+                    <category name="piwik">
+                        <text>
+                            <locale group="quiqqer/piwik"
+                                    var="piwik.settings.title"
+                                    />
+                        </text>
+                        <icon>fa fa-bar-chart icon-bar-chart</icon>
+
+                        <settings title="piwik.settings" name="piwik.settings.general">
+
+                            <title>
+                                <locale group="quiqqer/piwik"
+                                        var="piwik.settings.general.title"
+                                        />
+                            </title>
+
+                            <input conf="piwik.settings.url">
+                                <text>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.url"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="piwik.settings.id">
+                                <text>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.id"
+                                            />
+                                </text>
+                            </input>
+                        </settings>
+                    </category>
+                </categories>
+            </window>
+
+        </settings>
+
+    </project>
+</quiqqer>
