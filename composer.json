@@ -2,7 +2,7 @@
     "name" : "quiqqer/piwik",
     "type" : "quiqqer-plugin",
     "description" : "Piwik Project integration",
-    "version" : "dev-master",
+    "version" : "dev-dev",
     "license" : "MIT",
 
     "authors" : [{
