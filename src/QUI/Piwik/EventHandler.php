@@ -15,7 +15,7 @@ class EventHandler
      * @param QUI\Template $Template
      * @param QUI\Projects\Site $Site
      */
-    static function onTemplateSiteFetch($Template, $Site)
+    public static function onTemplateSiteFetch($Template, $Site)
     {
         $Project     = $Site->getProject();
         $piwikUrl    = $Project->getConfig('piwik.settings.url');
@@ -25,34 +25,15 @@ class EventHandler
             return;
         }
 
-        $piwik = '
-        <!-- Piwik -->
-        <script type="text/javascript">
-          var _paq = _paq || [];
-              _paq.push(["trackPageView"]);
-              _paq.push(["enableLinkTracking"]);
+        $Engine = QUI::getTemplateManager()->getEngine();
 
-          (function() {
-              var u="//' . $piwikUrl . '/";
-              _paq.push(["setTrackerUrl", u+"piwik.php"]);
-              _paq.push(["setSiteId", ' . $piwikSideId . ']);
+        $Engine->assign(array(
+            'piwikUrl' => $piwikUrl,
+            'piwikSideId' => $piwikSideId
+        ));
 
-            var d=document, g=d.createElement("script"),
-                s=d.getElementsByTagName("script")[0];
-
-            g.type="text/javascript";
-            g.async=true;
-            g.defer=true;
-            g.src=u+"piwik.js";
-
-            s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <!-- End Piwik Code -->
-        ';
-
-
-        $Template->extendFooter($piwik);
-
+        $Template->extendFooter(
+            $Engine->fetch(dirname(__FILE__) . '/piwik.html')
+        );
     }
 }
