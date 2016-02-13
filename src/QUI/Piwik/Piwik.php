@@ -28,6 +28,10 @@ class Piwik
 
         $Piwik = new \PiwikTracker($piwikSideId, $piwikUrl);
 
+        if ($Project->getConfig('piwik.settings.token')) {
+            $Piwik->setTokenAuth($Project->getConfig('piwik.settings.token'));
+        }
+
         return $Piwik;
     }
 }

@@ -11,6 +11,9 @@
                     <conf name="id">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="token">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -44,6 +47,14 @@
                                     <locale group="quiqqer/piwik"
                                             var="piwik.settings.id"
                                             />
+                                </text>
+                            </input>
+
+                            <input conf="piwik.settings.token">
+                                <text>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.token"
+                                    />
                                 </text>
                             </input>
                         </settings>

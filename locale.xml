@@ -17,5 +17,9 @@
             <de><![CDATA[Piwik Seiten ID]]></de>
             <en><![CDATA[Piwik site ID]]></en>
         </locale>
+        <locale name="piwik.settings.token">
+            <de><![CDATA[Piwik oauth Token (optional)]]></de>
+            <en><![CDATA[Piwik oauth token (optional)]]></en>
+        </locale>
     </groups>
 </locales>
