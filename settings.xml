@@ -25,7 +25,7 @@
                                     var="piwik.settings.title"
                                     />
                         </text>
-                        <icon>fa fa-bar-chart icon-bar-chart</icon>
+                        <icon>fa fa-bar-chart</icon>
 
                         <settings title="piwik.settings" name="piwik.settings.general">
 
