@@ -14,6 +14,9 @@
                     <conf name="token">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="langdata">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -23,30 +26,30 @@
                         <text>
                             <locale group="quiqqer/piwik"
                                     var="piwik.settings.title"
-                                    />
+                            />
                         </text>
                         <icon>fa fa-bar-chart</icon>
 
-                        <settings title="piwik.settings" name="piwik.settings.general">
+                        <settings>
 
                             <title>
                                 <locale group="quiqqer/piwik"
                                         var="piwik.settings.general.title"
-                                        />
+                                />
                             </title>
 
                             <input conf="piwik.settings.url">
                                 <text>
                                     <locale group="quiqqer/piwik"
                                             var="piwik.settings.url"
-                                            />
+                                    />
                                 </text>
                             </input>
                             <input conf="piwik.settings.id">
                                 <text>
                                     <locale group="quiqqer/piwik"
                                             var="piwik.settings.id"
-                                            />
+                                    />
                                 </text>
                             </input>
 
@@ -57,6 +60,20 @@
                                     />
                                 </text>
                             </input>
+                        </settings>
+
+                        <settings>
+
+                            <title>
+                                <locale group="quiqqer/piwik"
+                                        var="piwik.settings.projects.title"
+                                />
+                            </title>
+
+                            <input conf="piwik.settings.langdata"
+                                   data-qui="package/quiqqer/piwik/bin/Settings"
+                            />
+
                         </settings>
                     </category>
                 </categories>

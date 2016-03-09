@@ -21,6 +21,23 @@ class EventHandler
         $piwikUrl    = $Project->getConfig('piwik.settings.url');
         $piwikSideId = $Project->getConfig('piwik.settings.id');
 
+        $langSettings = $Project->getConfig('piwik.settings.langdata');
+
+        if ($langSettings) {
+            $ettings = json_decode($langSettings, true);
+            $lang    = $Project->getLang();
+
+            if (isset($ettings[$lang])) {
+                if (isset($ettings[$lang]['url'])) {
+                    $piwikUrl = $ettings[$lang]['url'];
+                }
+
+                if (isset($ettings[$lang]['id'])) {
+                    $piwikSideId = $ettings[$lang]['id'];
+                }
+            }
+        }
+
         if (empty($piwikUrl) || empty($piwikSideId)) {
             return;
         }
