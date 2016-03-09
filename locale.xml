@@ -23,8 +23,8 @@
         </locale>
 
         <locale name="piwik.settings.projects.title">
-            <de><![CDATA[Globale Piwik Einstellungen]]></de>
-            <en><![CDATA[Global Piwik settings]]></en>
+            <de><![CDATA[Piwik Einstellungen für einzelne Projektsprachen]]></de>
+            <en><![CDATA[Piwik settings for ]]></en>
         </locale>
     </groups>
 </locales>
