@@ -154,13 +154,16 @@ define('package/quiqqer/piwik/bin/Settings', [
 
         /**
          * value change
-         * @param event
          */
-        $change: function (event) {
+        $change: function () {
             var data = {};
 
             this.$Container.getElements('input').each(function (Node) {
                 var lang = Node.get('data-lang');
+
+                if (!data) {
+                    return;
+                }
 
                 if (!(lang in data)) {
                     data[lang] = {};
