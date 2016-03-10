@@ -24,16 +24,16 @@ class EventHandler
         $langSettings = $Project->getConfig('piwik.settings.langdata');
 
         if ($langSettings) {
-            $ettings = json_decode($langSettings, true);
-            $lang    = $Project->getLang();
+            $settings = json_decode($langSettings, true);
+            $lang     = $Project->getLang();
 
-            if (isset($ettings[$lang])) {
-                if (isset($ettings[$lang]['url'])) {
-                    $piwikUrl = $ettings[$lang]['url'];
+            if (isset($settings[$lang])) {
+                if (isset($settings[$lang]['url'])) {
+                    $piwikUrl = $settings[$lang]['url'];
                 }
 
-                if (isset($ettings[$lang]['id'])) {
-                    $piwikSideId = $ettings[$lang]['id'];
+                if (isset($settings[$lang]['id'])) {
+                    $piwikSideId = $settings[$lang]['id'];
                 }
             }
         }
