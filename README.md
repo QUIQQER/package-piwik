@@ -42,4 +42,7 @@ MIT
 Entwickler
 --------
 
----
+When included in an IFrame, Piwik reports do not load. 
+How do I allow Piwik reports to load from within an iframe?
+
+https://piwik.org/faq/troubleshooting/faq_147/

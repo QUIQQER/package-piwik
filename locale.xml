@@ -6,8 +6,8 @@
             <en><![CDATA[Piwik]]></en>
         </locale>
         <locale name="piwik.settings.general.title">
-            <de><![CDATA[Piwik Einstellungen]]></de>
-            <en><![CDATA[Piwik settings]]></en>
+            <de><![CDATA[Globale Piwik Einstellungen]]></de>
+            <en><![CDATA[Global Piwik settings]]></en>
         </locale>
         <locale name="piwik.settings.url">
             <de><![CDATA[Piwik URL]]></de>
@@ -16,6 +16,33 @@
         <locale name="piwik.settings.id">
             <de><![CDATA[Piwik Seiten ID]]></de>
             <en><![CDATA[Piwik site ID]]></en>
+        </locale>
+        <locale name="piwik.settings.token">
+            <de><![CDATA[Piwik oauth Token (optional)]]></de>
+            <en><![CDATA[Piwik oauth token (optional)]]></en>
+        </locale>
+
+        <locale name="piwik.settings.projects.title">
+            <de><![CDATA[Piwik Einstellungen für einzelne Projektsprachen]]></de>
+            <en><![CDATA[Piwik settings for ]]></en>
+        </locale>
+        <locale name="menu.piwik.title">
+            <de><![CDATA[Piwik Statistiken]]></de>
+            <en><![CDATA[Piwik stats]]></en>
+        </locale>
+        <locale name="panel.piwik.title">
+            <de><![CDATA[Piwik Statistiken]]></de>
+            <en><![CDATA[Piwik stats]]></en>
+        </locale>
+        <locale name="message.missing.settings" html="true">
+            <de><![CDATA[
+            Fehlende Piwik Einstellungen<br />
+            Bitte tragen Sie in dem Projekteinstellungen eine Piwik URL und Piwik Seiten-ID ein.
+            ]]></de>
+            <en><![CDATA[
+            Missing Piwik settings<br />
+            Please enter a Piwik URL and Piwik Page ID in the project settings.
+            ]]></en>
         </locale>
     </groups>
 </locales>
