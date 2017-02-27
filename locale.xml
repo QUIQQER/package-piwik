@@ -26,5 +26,23 @@
             <de><![CDATA[Piwik Einstellungen für einzelne Projektsprachen]]></de>
             <en><![CDATA[Piwik settings for ]]></en>
         </locale>
+        <locale name="menu.piwik.title">
+            <de><![CDATA[Piwik Statistiken]]></de>
+            <en><![CDATA[Piwik stats]]></en>
+        </locale>
+        <locale name="panel.piwik.title">
+            <de><![CDATA[Piwik Statistiken]]></de>
+            <en><![CDATA[Piwik stats]]></en>
+        </locale>
+        <locale name="message.missing.settings" html="true">
+            <de><![CDATA[
+            Fehlende Piwik Einstellungen<br />
+            Bitte tragen Sie in dem Projekteinstellungen eine Piwik URL und Piwik Seiten-ID ein.
+            ]]></de>
+            <en><![CDATA[
+            Missing Piwik settings<br />
+            Please enter a Piwik URL and Piwik Page ID in the project settings.
+            ]]></en>
+        </locale>
     </groups>
 </locales>
