@@ -44,6 +44,11 @@
                                             var="piwik.settings.url"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.url.description"
+                                    />
+                                </description>
                             </input>
                             <input conf="piwik.settings.id">
                                 <text>
@@ -71,6 +76,7 @@
                             </title>
 
                             <input conf="piwik.settings.langdata"
+                                   label="false"
                                    data-qui="package/quiqqer/piwik/bin/Settings"
                             />
 

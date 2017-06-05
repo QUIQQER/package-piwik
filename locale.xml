@@ -44,5 +44,14 @@
             Please enter a Piwik URL and Piwik Page ID in the project settings.
             ]]></en>
         </locale>
+
+        <locale name="piwik.settings.url.description">
+            <de><![CDATA[
+            Bitte geben Sie die Piwik-Stats URL ohne Protokoll an. Zum Beispiel: stats.server.com
+            ]]></de>
+            <en><![CDATA[
+            Please enter the Piwik-Stats URL without protocol. For example: stats.server.com
+            ]]></en>
+        </locale>
     </groups>
 </locales>
