@@ -8,10 +8,11 @@ define('package/quiqqer/piwik/bin/Panel', [
     'qui/controls/buttons/Select',
     'Locale',
     'Ajax',
+    'Users',
 
     'css!package/quiqqer/piwik/bin/Panel.css'
 
-], function (QUI, QUIPanel, QUISelect, QUILocale, QUIAjax) {
+], function (QUI, QUIPanel, QUISelect, QUILocale, QUIAjax, Users) {
     "use strict";
 
     var lg = 'quiqqer/piwik';
@@ -96,60 +97,77 @@ define('package/quiqqer/piwik/bin/Panel', [
         $loadFrame: function () {
             this.Loader.show();
 
-            QUIAjax.get('ajax_project_get_config', function (config) {
-                var url   = config['piwik.settings.url'],
-                    id    = config['piwik.settings.id'],
-                    token = config['piwik.settings.token'];
+            var User = Users.getUserBySession(),
+                Prom = Promise.resolve();
 
-                this.getContent()
-                    .getElements('.quiqqer-piwik-panel-nosettings,iframe')
-                    .destroy();
+            if (!User.isLoaded()) {
+                Prom = User.load();
+            }
 
-                if (url === '' || id === '') {
-                    new Element('div', {
-                        'class': 'quiqqer-piwik-panel-nosettings',
-                        html   : 'Fehlende Piwik Settings'
-                    }).inject(this.getContent());
+            Prom.then(function () {
+                QUIAjax.get([
+                    'ajax_project_get_config',
+                    'package_quiqqer_piwik_ajax_md5'
+                ], function (config, pass) {
 
-                    this.Loader.hide();
-                    return;
-                }
+                    var url   = config['piwik.settings.url'],
+                        id    = config['piwik.settings.id'],
+                        token = config['piwik.settings.token'];
 
-                this.getContent().set('html', '');
-                this.getContent().setStyle('background', '#edecec');
+                    this.getContent()
+                        .getElements('.quiqqer-piwik-panel-nosettings,iframe')
+                        .destroy();
 
-                url = url.replace('https://', '')
-                    .replace('http://', '');
+                    if (url === '' || id === '') {
+                        new Element('div', {
+                            'class': 'quiqqer-piwik-panel-nosettings',
+                            html   : 'Fehlende Piwik Settings'
+                        }).inject(this.getContent());
 
-                var src = 'https://' + url + '/index.php?';
+                        this.Loader.hide();
+                        return;
+                    }
 
-                src = src + Object.toQueryString({
+                    this.getContent().set('html', '');
+                    this.getContent().setStyle('background', '#edecec');
+
+                    var frameParams = {
                         module: 'CoreHome',
                         action: 'index',
                         idSite: id,
                         period: 'day',
                         date  : 'yesterday'
-                    });
+                    };
 
-                new Element('iframe', {
-                    src   : src,
-                    styles: {
-                        border: 'none',
-                        height: 'calc(100% - 4px)',
-                        width : '100%'
+                    if (User.getAttribute('quiqqer.piwik.pass') &&
+                        User.getAttribute('quiqqer.piwik.login')) {
+
+                        frameParams.module   = 'Login';
+                        frameParams.action   = 'logme';
+                        frameParams.login    = User.getAttribute('quiqqer.piwik.login');
+                        frameParams.password = pass;
                     }
-                }).inject(this.getContent());
 
-                this.Loader.hide();
-            }.bind(this), {
-                project: this.getAttribute('project')
-            });
+                    url = url.replace('https://', '').replace('http://', '');
 
-            // piwik.settings.url=""
-            // piwik.settings.id=""
-            // piwik.settings.token=""
-            // piwik.settings.langdata=""
+                    var src = 'https://' + url + '/index.php?' + Object.toQueryString(frameParams);
 
+                    new Element('iframe', {
+                        src   : src,
+                        styles: {
+                            border: 'none',
+                            height: 'calc(100% - 4px)',
+                            width : '100%'
+                        }
+                    }).inject(this.getContent());
+
+                    this.Loader.hide();
+                }.bind(this), {
+                    'package': 'quiqqer/piwik',
+                    project  : this.getAttribute('project'),
+                    str      : User.getAttribute('quiqqer.piwik.pass')
+                });
+            }.bind(this));
         }
     });
 });

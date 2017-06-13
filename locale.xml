@@ -53,5 +53,18 @@
             Please enter the Piwik-Stats URL without protocol. For example: stats.server.com
             ]]></en>
         </locale>
+
+        <locale name="user.profile.title">
+            <de><![CDATA[Piwik Profil Einstellungen]]></de>
+            <en><![CDATA[Piwik profile settings]]></en>
+        </locale>
+        <locale name="user.profile.pass">
+            <de><![CDATA[Piwik Passwort]]></de>
+            <en><![CDATA[Piwik password]]></en>
+        </locale>
+        <locale name="user.profile.login">
+            <de><![CDATA[Piwik Benutzername]]></de>
+            <en><![CDATA[Piwik username]]></en>
+        </locale>
     </groups>
 </locales>
