@@ -139,14 +139,27 @@ define('package/quiqqer/piwik/bin/Panel', [
                         date  : 'yesterday'
                     };
 
+                    var now    = new Date().getTime(),
+                        opened = parseInt(QUI.Storage.remove('piwik-opened'));
+
+                    if (!opened) {
+                        opened = 0;
+                    }
+
+                    console.log(opened);
+
                     if (User.getAttribute('quiqqer.piwik.pass') &&
-                        User.getAttribute('quiqqer.piwik.login')) {
+                        User.getAttribute('quiqqer.piwik.login') &&
+                        parseInt(QUI.Storage.get('piwik-opened')) + 7200 < now) {
 
                         frameParams.module   = 'Login';
                         frameParams.action   = 'logme';
                         frameParams.login    = User.getAttribute('quiqqer.piwik.login');
                         frameParams.password = pass;
                     }
+
+                    // session storage
+                    QUI.Storage.set('piwik-opened', now);
 
                     url = url.replace('https://', '').replace('http://', '');
 
