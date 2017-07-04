@@ -23,20 +23,45 @@
     if (typeof define === 'function') {
         window.QUIQQER_PIWIK = true;
 
-        define('PiwikTracker', function () {
-            var Tracker = Piwik.getAsyncTracker();
-            var u       = "//{$piwikUrl}/";
+        define('piwikTracker', function () {
+            var Tracker = null;
 
-            Tracker.setTrackerUrl(u + "piwik.php");
-            Tracker.setSiteId(parseInt("{$piwikSideId}"));
+            var setPiwikData = function () {
+                Tracker = Piwik.getAsyncTracker();
+                var u   = "//{$piwikUrl}/";
 
-            Tracker.setDocumentTitle(
-                document.domain + "/" + document.title
-            );
+                Tracker.setTrackerUrl(u + "piwik.php");
+                Tracker.setSiteId(parseInt("{$piwikSideId}"));
 
-            Tracker.enableLinkTracking();
+                Tracker.setDocumentTitle(
+                    document.domain + "/" + document.title
+                );
 
-            return Tracker;
+                Tracker.enableLinkTracking();
+            };
+
+            return new Promise(function (resolve) {
+                if (typeof window.Piwik !== 'undefined') {
+                    setPiwikData();
+                    resolve(Tracker);
+                    return;
+                }
+
+                var look = function () {
+                    setTimeout(function () {
+                        if (typeof window.Piwik !== 'undefined') {
+                            setPiwikData();
+                            resolve(Tracker);
+                            return;
+                        }
+
+                        look();
+                    }, 100);
+                };
+
+                look();
+            });
+
         });
     }
 </script>
