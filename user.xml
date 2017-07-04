@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+
+    <attributes>
+        <attribute encrypt="1">quiqqer.piwik.pass</attribute>
+        <attribute encrypt="1">quiqqer.piwik.login</attribute>
+    </attributes>
+
+    <profile>
+        <tab name="ERP">
+            <text>Produkte</text>
+            <image>fa fa-shopping-bag</image>
+            <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
+        </tab>
+    </profile>
+</user>
