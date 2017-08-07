@@ -1,4 +1,3 @@
-<!-- Piwik -->
 <script type="text/javascript">
     var _paq = _paq || [];
     _paq.push(["trackPageView"]);
@@ -6,7 +5,7 @@
 
     (function () {
         var u = "//{$piwikUrl}/";
-        _paq.push(["setTrackerUrl", u + "piwik.php"]);
+        _paq.push(["setTrackerUrl", u + "js/"]);
         _paq.push(["setSiteId", parseInt("{$piwikSideId}")]);
 
         var d = document, g = d.createElement("script"),
@@ -15,7 +14,7 @@
         g.type  = "text/javascript";
         g.async = true;
         g.defer = true;
-        g.src   = u + "piwik.js";
+        g.src   = u + "js/";
 
         s.parentNode.insertBefore(g, s);
     })();
@@ -30,7 +29,7 @@
                 Tracker = Piwik.getAsyncTracker();
                 var u   = "//{$piwikUrl}/";
 
-                Tracker.setTrackerUrl(u + "piwik.php");
+                Tracker.setTrackerUrl(u + "js/");
                 Tracker.setSiteId(parseInt("{$piwikSideId}"));
 
                 Tracker.setDocumentTitle(
@@ -65,4 +64,3 @@
         });
     }
 </script>
-<!-- End Piwik Code -->
