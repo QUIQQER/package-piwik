@@ -3,25 +3,28 @@
 Piwik
 ========
 
-Erweiter die Projekteinstellung für Piwik Trackin
+Integrated Piwik in QUIQQER. 
+Piwik is the leading open-source analytics platform that gives you more than just powerful analytics.
 
-Paketname:
+
+Package name:
 
     quiqqer/piwik
 
 
-Features (Funktionen)
+Features
 --------
 
-- Einbinden von Piwik in ein Projekt
+- Embed PIWIK in your QUIQQER Projects
+
 
 Installation
 ------------
 
-Der Paketname ist: quiqqer/piwik
+The Package name is: quiqqer/piwik
 
 
-Mitwirken
+Contribute
 ----------
 
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/package-piwik/issues
@@ -31,19 +34,15 @@ Mitwirken
 Support
 -------
 
-Falls Sie ein Fehler gefunden haben, oder Verbesserungen wünschen,
-dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
+If you have found errors, wishes or suggestions for improvement,
+you can contact us by email at support@pcsg.de.
+
+We will try to meet your needs or send them to the responsible developers
+of the project.
 
 
-Lizenz
+License
 -------
 
 GPL-3.0+
-
-Entwickler
---------
-
-When included in an IFrame, Piwik reports do not load. 
-How do I allow Piwik reports to load from within an iframe?
-
-https://piwik.org/faq/troubleshooting/faq_147/
+aq/troubleshooting/faq_147/
