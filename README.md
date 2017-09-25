@@ -1,3 +1,4 @@
+![QUIQQER Piwik](bin/images/Readme.jpg)
 
 Piwik
 ========
@@ -37,7 +38,7 @@ dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
 Lizenz
 -------
 
-MIT
+GPL-3.0+
 
 Entwickler
 --------

@@ -1,6 +1,6 @@
 {
   "name": "quiqqer/piwik",
-  "type": "quiqqer-plugin",
+  "type": "quiqqer-module",
   "description": "Integrated Piwik in QUIQQER. Piwik is the leading open-source analytics platform that gives you more than just powerful analytics.",
   "version": "dev-dev",
   "license": "GPL-3.0+",
