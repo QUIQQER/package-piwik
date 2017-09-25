@@ -7,10 +7,19 @@
     </attributes>
 
     <profile>
-        <tab name="ERP">
-            <text>Produkte</text>
-            <image>fa fa-shopping-bag</image>
+        <tab name="PIWIK">
+            <text>PIWIK</text>
+            <image>fa fa-bar-chart</image>
             <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
         </tab>
     </profile>
+
+
+    <window>
+        <tab name="ERP">
+            <text>PIWIK</text>
+            <image>fa fa-bar-chart</image>
+            <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
+        </tab>
+    </window>
 </user>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <locales>
     <groups name="quiqqer/piwik" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Piwik]]></de>
+            <en><![CDATA[QUIQQER - Piwik]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[Integriert PIWIK in QUIQQER. Piwik ist die führende Open-Source-Analytics-Plattform, die Ihnen mehr als nur leistungsstarke Analytik bietet.]]></de>
+            <en><![CDATA[Integrated Piwik in QUIQQER. Piwik is the leading open-source analytics platform that gives you more than just powerful analytics.]]></en>
+        </locale>
         <locale name="piwik.settings.title">
             <de><![CDATA[Piwik]]></de>
             <en><![CDATA[Piwik]]></en>
