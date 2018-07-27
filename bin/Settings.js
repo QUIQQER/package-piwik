@@ -100,7 +100,7 @@ define('package/quiqqer/piwik/bin/Settings', [
                     list.each(function (Node) {
                         var lang = Node.get('data-lang');
 
-                        if (!(lang in value)) {
+                        if (!value || !(lang in value)) {
                             return;
                         }
 
