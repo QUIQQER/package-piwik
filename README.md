@@ -1,10 +1,12 @@
 ![QUIQQER Piwik](bin/images/Readme.jpg)
 
-Piwik
+Matomo
 ========
 
-Integrated Piwik in QUIQQER. 
-Piwik is the leading open-source analytics platform that gives you more than just powerful analytics.
+    Note: Matomo was formerly called "PIWIK"
+
+Integrates Matomo into QUIQQER. 
+Matomo is the leading open-source analytics platform that gives you more than just powerful analytics.
 
 
 Package name:
@@ -15,7 +17,7 @@ Package name:
 Features
 --------
 
-- Embed PIWIK in your QUIQQER Projects
+- Embed Matomo in your QUIQQER Projects
 
 
 Installation
@@ -45,4 +47,3 @@ License
 -------
 
 GPL-3.0+
-aq/troubleshooting/faq_147/

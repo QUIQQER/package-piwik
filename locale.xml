@@ -2,77 +2,77 @@
 <locales>
     <groups name="quiqqer/piwik" datatype="php,js">
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Piwik]]></de>
-            <en><![CDATA[QUIQQER - Piwik]]></en>
+            <de><![CDATA[QUIQQER - Matomo]]></de>
+            <en><![CDATA[QUIQQER - Matomo]]></en>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[Integriert PIWIK in QUIQQER. Piwik ist die führende Open-Source-Analytics-Plattform, die Ihnen mehr als nur leistungsstarke Analytik bietet.]]></de>
-            <en><![CDATA[Integrated Piwik in QUIQQER. Piwik is the leading open-source analytics platform that gives you more than just powerful analytics.]]></en>
+            <de><![CDATA[Integriert Matomo in QUIQQER. Matomo ist die führende Open-Source-Analytics-Plattform, die Ihnen mehr als nur leistungsstarke Analytik bietet.]]></de>
+            <en><![CDATA[Integrates Matomo into QUIQQER. Matomo is the leading open-source analytics platform that gives you more than just powerful analytics.]]></en>
         </locale>
         <locale name="piwik.settings.title">
-            <de><![CDATA[Piwik]]></de>
-            <en><![CDATA[Piwik]]></en>
+            <de><![CDATA[Matomo]]></de>
+            <en><![CDATA[Matomo]]></en>
         </locale>
         <locale name="piwik.settings.general.title">
-            <de><![CDATA[Globale Piwik Einstellungen]]></de>
-            <en><![CDATA[Global Piwik settings]]></en>
+            <de><![CDATA[Globale Matomo Einstellungen]]></de>
+            <en><![CDATA[Global Matomo settings]]></en>
         </locale>
         <locale name="piwik.settings.url">
-            <de><![CDATA[Piwik URL]]></de>
-            <en><![CDATA[Piwik url]]></en>
+            <de><![CDATA[Matomo URL]]></de>
+            <en><![CDATA[Matomo URL]]></en>
         </locale>
         <locale name="piwik.settings.id">
-            <de><![CDATA[Piwik Seiten ID]]></de>
-            <en><![CDATA[Piwik site ID]]></en>
+            <de><![CDATA[Matomo Seiten ID]]></de>
+            <en><![CDATA[Matomo site ID]]></en>
         </locale>
         <locale name="piwik.settings.token">
-            <de><![CDATA[Piwik oauth Token (optional)]]></de>
-            <en><![CDATA[Piwik oauth token (optional)]]></en>
+            <de><![CDATA[Matomo OAuth Token (optional)]]></de>
+            <en><![CDATA[Matomo OAuth token (optional)]]></en>
         </locale>
 
         <locale name="piwik.settings.projects.title">
-            <de><![CDATA[Piwik Einstellungen für einzelne Projektsprachen]]></de>
-            <en><![CDATA[Piwik settings for ]]></en>
+            <de><![CDATA[Matomo Einstellungen für einzelne Projektsprachen]]></de>
+            <en><![CDATA[Matomo settings for individual project languages]]></en>
         </locale>
         <locale name="menu.piwik.title">
-            <de><![CDATA[Piwik Statistiken]]></de>
-            <en><![CDATA[Piwik stats]]></en>
+            <de><![CDATA[Matomo Statistiken]]></de>
+            <en><![CDATA[Matomo stats]]></en>
         </locale>
         <locale name="panel.piwik.title">
-            <de><![CDATA[Piwik Statistiken]]></de>
-            <en><![CDATA[Piwik stats]]></en>
+            <de><![CDATA[Matomo Statistiken]]></de>
+            <en><![CDATA[Matomo stats]]></en>
         </locale>
         <locale name="message.missing.settings" html="true">
             <de><![CDATA[
-            Fehlende Piwik Einstellungen<br />
-            Bitte tragen Sie in dem Projekteinstellungen eine Piwik URL und Piwik Seiten-ID ein.
+            Fehlende Matomo Einstellungen<br />
+            Bitte tragen Sie in den Projekteinstellungen eine Matomo URL und eine Matomo Seiten-ID ein.
             ]]></de>
             <en><![CDATA[
-            Missing Piwik settings<br />
-            Please enter a Piwik URL and Piwik Page ID in the project settings.
+            Missing Matomo settings<br />
+            Please enter a Matomo URL and a Matomo Page ID in the project settings.
             ]]></en>
         </locale>
 
         <locale name="piwik.settings.url.description">
             <de><![CDATA[
-            Bitte geben Sie die Piwik-Stats URL ohne Protokoll an. Zum Beispiel: stats.server.com
+            Bitte geben Sie die Matomo-Stats URL ohne Protokoll an. Zum Beispiel: stats.server.com
             ]]></de>
             <en><![CDATA[
-            Please enter the Piwik-Stats URL without protocol. For example: stats.server.com
+            Please enter the Matomo-Stats URL without protocol. For example: stats.server.com
             ]]></en>
         </locale>
 
         <locale name="user.profile.title">
-            <de><![CDATA[Piwik Profil Einstellungen]]></de>
-            <en><![CDATA[Piwik profile settings]]></en>
+            <de><![CDATA[Matomo Profil Einstellungen]]></de>
+            <en><![CDATA[Matomo profile settings]]></en>
         </locale>
         <locale name="user.profile.pass">
-            <de><![CDATA[Piwik Passwort]]></de>
-            <en><![CDATA[Piwik password]]></en>
+            <de><![CDATA[Matomo Passwort]]></de>
+            <en><![CDATA[Matomo password]]></en>
         </locale>
         <locale name="user.profile.login">
-            <de><![CDATA[Piwik Benutzername]]></de>
-            <en><![CDATA[Piwik username]]></en>
+            <de><![CDATA[Matomo Benutzername]]></de>
+            <en><![CDATA[Matomo username]]></en>
         </locale>
     </groups>
 </locales>

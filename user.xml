@@ -8,7 +8,7 @@
 
     <profile>
         <tab name="PIWIK">
-            <text>PIWIK</text>
+            <text>Matomo</text>
             <image>fa fa-bar-chart</image>
             <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
         </tab>
@@ -17,7 +17,7 @@
 
     <window>
         <tab name="ERP">
-            <text>PIWIK</text>
+            <text>Matomo</text>
             <image>fa fa-bar-chart</image>
             <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
         </tab>
