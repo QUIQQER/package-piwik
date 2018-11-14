@@ -1,7 +1,7 @@
 {
   "name": "quiqqer/piwik",
   "type": "quiqqer-module",
-  "description": "Integrated Piwik in QUIQQER. Piwik is the leading open-source analytics platform that gives you more than just powerful analytics.",
+  "description": "Integrates Matomo (formerly PIWIK) in QUIQQER. Matomo is the leading open-source analytics platform that gives you more than just powerful analytics.",
   "version": "dev-master",
   "license": "GPL-3.0+",
   "authors": [

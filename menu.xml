@@ -3,7 +3,7 @@
     <item parent="/extras/"
           name="stats"
           require="package/quiqqer/piwik/bin/Panel"
-          icon="fa fa-bar-chart"
+          icon="fa fa-line-chart"
     >
         <locale group="quiqqer/piwik" var="menu.piwik.title"/>
     </item>
