@@ -31,6 +31,7 @@ Contribute
 
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/package-piwik/issues
 - Source Code: https://dev.quiqqer.com/quiqqer/package-piwik
+- Wiki: https://dev.quiqqer.com/quiqqer/package-piwik/wikis/home
 
 
 Support
