@@ -9,14 +9,7 @@
             <de><![CDATA[Integriert Matomo in QUIQQER. Matomo ist die führende Open-Source-Analytics-Plattform, die Ihnen mehr als nur leistungsstarke Analytik bietet.]]></de>
             <en><![CDATA[Integrates Matomo into QUIQQER. Matomo is the leading open-source analytics platform that gives you more than just powerful analytics.]]></en>
         </locale>
-        <locale name="piwik.settings.title">
-            <de><![CDATA[Matomo]]></de>
-            <en><![CDATA[Matomo]]></en>
-        </locale>
-        <locale name="piwik.settings.general.title">
-            <de><![CDATA[Allgemeingültige Einstellungen]]></de>
-            <en><![CDATA[Universal settings]]></en>
-        </locale>
+
         <locale name="piwik.settings.url">
             <de><![CDATA[Matomo URL]]></de>
             <en><![CDATA[Matomo URL]]></en>
@@ -29,6 +22,28 @@
             <de><![CDATA[Matomo OAuth Token (optional)]]></de>
             <en><![CDATA[Matomo OAuth token (optional)]]></en>
         </locale>
+    </groups>
+
+    <groups name="quiqqer/piwik" datatype="js">
+        <locale name="panel.error.settings.missing">
+            <de><![CDATA[Matomo wurde für dieses Projekt nicht eingerichtet.<br/>Dies ist in den Einstellungen des Projekts möglich.]]></de>
+            <en><![CDATA[Matomo wasn't configured for this project yet.<br/>This can be done in the project's settings.]]></en>
+        </locale>
+        <locale name="panel.piwik.title">
+            <de><![CDATA[Matomo Statistiken]]></de>
+            <en><![CDATA[Matomo stats]]></en>
+        </locale>
+    </groups>
+
+    <groups name="quiqqer/piwik" datatype="php">
+        <locale name="piwik.settings.title">
+            <de><![CDATA[Matomo]]></de>
+            <en><![CDATA[Matomo]]></en>
+        </locale>
+        <locale name="piwik.settings.general.title">
+            <de><![CDATA[Allgemeingültige Einstellungen]]></de>
+            <en><![CDATA[Universal settings]]></en>
+        </locale>
         <locale name="piwik.settings.projects.title">
             <de><![CDATA[Einstellungen für einzelne Projektsprachen (überschreiben allg. Einstellungen)]]></de>
             <en><![CDATA[Settings for individual project languages (overwrite general settings)]]></en>
@@ -36,20 +51,6 @@
         <locale name="menu.piwik.title">
             <de><![CDATA[Matomo Statistiken]]></de>
             <en><![CDATA[Matomo stats]]></en>
-        </locale>
-        <locale name="panel.piwik.title">
-            <de><![CDATA[Matomo Statistiken]]></de>
-            <en><![CDATA[Matomo stats]]></en>
-        </locale>
-        <locale name="message.missing.settings" html="true">
-            <de><![CDATA[
-            Fehlende Matomo Einstellungen<br />
-            Bitte tragen Sie in den Projekteinstellungen eine Matomo URL und eine Matomo Seiten-ID ein.
-            ]]></de>
-            <en><![CDATA[
-            Missing Matomo settings<br />
-            Please enter a Matomo URL and a Matomo Page ID in the project settings.
-            ]]></en>
         </locale>
 
         <locale name="piwik.settings.url.description">
@@ -72,13 +73,6 @@
         <locale name="user.profile.login">
             <de><![CDATA[Matomo Benutzername]]></de>
             <en><![CDATA[Matomo username]]></en>
-        </locale>
-    </groups>
-
-    <groups name="quiqqer/piwik" datatype="js">
-        <locale name="panel.error.settings.missing">
-            <de><![CDATA[Matomo wurde für dieses Projekt nicht eingerichtet.<br/>Dies ist in den Einstellungen des Projekts möglich.]]></de>
-            <en><![CDATA[Matomo wasn't configured for this project yet.<br/>This can be done in the project's settings.]]></en>
         </locale>
     </groups>
 </locales>
