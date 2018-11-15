@@ -7,7 +7,7 @@
     </attributes>
 
     <profile>
-        <tab name="PIWIK">
+        <tab name="MATOMO">
             <text>Matomo</text>
             <image>fa fa-line-chart</image>
             <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
@@ -16,7 +16,7 @@
 
 
     <window>
-        <tab name="ERP">
+        <tab name="MATOMO">
             <text>Matomo</text>
             <image>fa fa-line-chart</image>
             <template>OPT_DIR/quiqqer/piwik/template/profile.html</template>
