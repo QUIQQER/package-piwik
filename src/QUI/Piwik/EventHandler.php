@@ -28,11 +28,11 @@ class EventHandler
             $lang     = $Project->getLang();
 
             if (isset($settings[$lang])) {
-                if (isset($settings[$lang]['url'])) {
+                if (isset($settings[$lang]['url']) && !empty($settings[$lang]['url'])) {
                     $piwikUrl = $settings[$lang]['url'];
                 }
 
-                if (isset($settings[$lang]['id'])) {
+                if (isset($settings[$lang]['id']) && !empty($settings[$lang]['id'])) {
                     $piwikSideId = $settings[$lang]['id'];
                 }
             }
