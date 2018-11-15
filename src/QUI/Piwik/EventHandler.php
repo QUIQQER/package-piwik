@@ -27,8 +27,13 @@ class EventHandler
             $settings = json_decode($langSettings, true);
             $lang     = $Project->getLang();
 
+//            var_dump($piwikUrl);
+//            exit;
+
             if (isset($settings[$lang])) {
-                if (isset($settings[$lang]['url']) && !empty($settings[$lang]['url'])) {
+                if (isset($settings[$lang]['url'])
+                    && !empty($settings[$lang]['url'])
+                    && empty($piwikUrl)) {
                     $piwikUrl = $settings[$lang]['url'];
                 }
 
@@ -42,10 +47,16 @@ class EventHandler
             return;
         }
 
-        $Engine = QUI::getTemplateManager()->getEngine();
+        try {
+            $Engine = QUI::getTemplateManager()->getEngine();
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addDebug($Exception->getMessage());
+
+            return;
+        }
 
         $Engine->assign(array(
-            'piwikUrl' => $piwikUrl,
+            'piwikUrl'    => $piwikUrl,
             'piwikSideId' => $piwikSideId
         ));
 
