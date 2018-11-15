@@ -75,4 +75,11 @@
             <en><![CDATA[Matomo username]]></en>
         </locale>
     </groups>
+
+    <groups name="quiqqer/piwik" datatype="js">
+        <locale name="panel.error.settings.missing">
+            <de><![CDATA[Matomo wurde für dieses Projekt nicht eingerichtet.<br/>Dies ist in den Einstellungen des Projekts möglich.]]></de>
+            <en><![CDATA[Matomo wasn't configured for this project yet.<br/>This can be done in the project's settings.]]></en>
+        </locale>
+    </groups>
 </locales>

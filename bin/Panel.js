@@ -121,7 +121,7 @@ define('package/quiqqer/piwik/bin/Panel', [
                     if (url === '' || id === '') {
                         new Element('div', {
                             'class': 'quiqqer-piwik-panel-nosettings',
-                            html   : 'Fehlende Piwik Settings'
+                            html   : QUILocale.get(lg, 'panel.error.settings.missing')
                         }).inject(this.getContent());
 
                         this.Loader.hide();
