@@ -14,8 +14,8 @@
             <en><![CDATA[Matomo]]></en>
         </locale>
         <locale name="piwik.settings.general.title">
-            <de><![CDATA[Globale Matomo Einstellungen]]></de>
-            <en><![CDATA[Global Matomo settings]]></en>
+            <de><![CDATA[Allgemeingültige Einstellungen]]></de>
+            <en><![CDATA[Universal settings]]></en>
         </locale>
         <locale name="piwik.settings.url">
             <de><![CDATA[Matomo URL]]></de>
@@ -29,10 +29,9 @@
             <de><![CDATA[Matomo OAuth Token (optional)]]></de>
             <en><![CDATA[Matomo OAuth token (optional)]]></en>
         </locale>
-
         <locale name="piwik.settings.projects.title">
-            <de><![CDATA[Matomo Einstellungen für einzelne Projektsprachen]]></de>
-            <en><![CDATA[Matomo settings for individual project languages]]></en>
+            <de><![CDATA[Einstellungen für einzelne Projektsprachen (überschreiben allg. Einstellungen)]]></de>
+            <en><![CDATA[Settings for individual project languages (overwrite general settings)]]></en>
         </locale>
         <locale name="menu.piwik.title">
             <de><![CDATA[Matomo Statistiken]]></de>
