@@ -29,6 +29,10 @@
             <de><![CDATA[Matomo wurde für dieses Projekt nicht eingerichtet.<br/>Dies ist in den Einstellungen des Projekts möglich.]]></de>
             <en><![CDATA[Matomo wasn't configured for this project yet.<br/>This can be done in the project's settings.]]></en>
         </locale>
+        <locale name="panel.notice.userdata.missing">
+            <de><![CDATA[Um automatisch angemeldet zu werden, fügen Sie Ihre Matomo-Nutzerdaten zu Ihren Nutzereinstellungen hinzu.]]></de>
+            <en><![CDATA[To login automatically add your Matomo-userdata to your user settings.]]></en>
+        </locale>
         <locale name="panel.piwik.title">
             <de><![CDATA[Matomo Statistiken]]></de>
             <en><![CDATA[Matomo stats]]></en>

@@ -139,20 +139,25 @@ define('package/quiqqer/piwik/bin/Panel', [
                         date  : 'yesterday'
                     };
 
-                    var now    = new Date().getTime(),
-                        opened = parseInt(QUI.Storage.remove('piwik-opened'));
+                    var now                = new Date().getTime(),
+                        opened             = parseInt(QUI.Storage.remove('piwik-opened')),
+                        usersPiwikLogin    = User.getAttribute('quiqqer.piwik.login'),
+                        usersPiwikPassword = User.getAttribute('quiqqer.piwik.pass');
 
                     if (!opened) {
                         opened = 0;
                     }
 
-                    if (User.getAttribute('quiqqer.piwik.pass') &&
-                        User.getAttribute('quiqqer.piwik.login') &&
-                        opened + 7200 < now) {
+                    if (!usersPiwikLogin && !usersPiwikPassword) {
+                        QUI.getMessageHandler().then(function (MH) {
+                            MH.addInformation(QUILocale.get(lg, 'panel.notice.userdata.missing'));
+                        });
+                    }
 
+                    if (usersPiwikPassword && usersPiwikLogin && opened + 7200 < now) {
                         frameParams.module   = 'Login';
                         frameParams.action   = 'logme';
-                        frameParams.login    = User.getAttribute('quiqqer.piwik.login');
+                        frameParams.login    = usersPiwikLogin;
                         frameParams.password = pass;
                     }
 
