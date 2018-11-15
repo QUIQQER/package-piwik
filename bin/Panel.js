@@ -148,7 +148,7 @@ define('package/quiqqer/piwik/bin/Panel', [
 
                     if (User.getAttribute('quiqqer.piwik.pass') &&
                         User.getAttribute('quiqqer.piwik.login') &&
-                        parseInt(QUI.Storage.get('piwik-opened')) + 7200 < now) {
+                        opened + 7200 < now) {
 
                         frameParams.module   = 'Login';
                         frameParams.action   = 'logme';
