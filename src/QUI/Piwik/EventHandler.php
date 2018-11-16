@@ -8,6 +8,8 @@ use QUI;
  * Class EventHandler
  *
  * @package QUI\Piwik
+ *
+ * @author PCSG (Jan Wennrich)
  */
 class EventHandler
 {
@@ -19,7 +21,7 @@ class EventHandler
     {
         $Project     = $Site->getProject();
         $piwikUrl    = $Project->getConfig('piwik.settings.url');
-        $piwikSideId = $Project->getConfig('piwik.settings.id');
+        $piwikSiteId = Piwik::getSiteId($Project);
 
         $langSettings = $Project->getConfig('piwik.settings.langdata');
 
@@ -27,23 +29,17 @@ class EventHandler
             $settings = json_decode($langSettings, true);
             $lang     = $Project->getLang();
 
-//            var_dump($piwikUrl);
-//            exit;
-
             if (isset($settings[$lang])) {
                 if (isset($settings[$lang]['url'])
                     && !empty($settings[$lang]['url'])
-                    && empty($piwikUrl)) {
+                    && empty($piwikUrl)
+                ) {
                     $piwikUrl = $settings[$lang]['url'];
-                }
-
-                if (isset($settings[$lang]['id']) && !empty($settings[$lang]['id'])) {
-                    $piwikSideId = $settings[$lang]['id'];
                 }
             }
         }
 
-        if (empty($piwikUrl) || empty($piwikSideId)) {
+        if (empty($piwikUrl) || empty($piwikSiteId)) {
             return;
         }
 
@@ -57,11 +53,45 @@ class EventHandler
 
         $Engine->assign(array(
             'piwikUrl'    => $piwikUrl,
-            'piwikSideId' => $piwikSideId
+            'piwikSideId' => $piwikSiteId
         ));
 
         $Template->extendFooter(
             $Engine->fetch(dirname(__FILE__) . '/piwik.html')
         );
+    }
+
+
+    /**
+     * Fired when updating the package
+     *
+     * @param QUI\Package\Package $Package
+     */
+    public static function onPackageUpdate(QUI\Package\Package $Package)
+    {
+        if ($Package->getName() == 'quiqqer/piwik') {
+            Patches::moveSiteIdsToLocaleVariables();
+        }
+    }
+
+
+    /**
+     * Listens to project config save
+     *
+     * @param $project
+     * @param array $config
+     * @param array $params
+     */
+    public static function onProjectConfigSave($project, array $config, array $params)
+    {
+        try {
+            $Project = QUI::getProject($project);
+        } catch (QUI\Exception $Exception) {
+            return;
+        }
+
+        $siteIds = json_decode($params['matomo.siteIds'], true);
+
+        Piwik::setSiteIds($siteIds, $Project);
     }
 }
