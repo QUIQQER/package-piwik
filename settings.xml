@@ -56,6 +56,24 @@
                                             var="piwik.settings.id"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.id.description"
+                                    />
+                                </description>
+                            </input>
+
+                            <input type="hidden" data-qui="package/quiqqer/piwik/bin/controls/SiteIds">
+                                <text>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.siteIds"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.siteIds.description"
+                                    />
+                                </description>
                             </input>
 
                             <input conf="piwik.settings.token">
@@ -64,14 +82,11 @@
                                             var="piwik.settings.token"
                                     />
                                 </text>
-                            </input>
-
-                            <input type="hidden" data-qui="package/quiqqer/piwik/bin/controls/SiteIds">
-                                <text>
-                                    <locale group="quiqqer/app"
-                                            var="piwik.settings.siteIds"
+                                <description>
+                                    <locale group="quiqqer/piwik"
+                                            var="piwik.settings.token.description"
                                     />
-                                </text>
+                                </description>
                             </input>
                         </settings>
                     </category>

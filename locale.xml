@@ -11,16 +11,23 @@
         </locale>
 
         <locale name="piwik.settings.url">
-            <de><![CDATA[Matomo URL]]></de>
-            <en><![CDATA[Matomo URL]]></en>
+            <de><![CDATA[Server URL]]></de>
+            <en><![CDATA[Server URL]]></en>
         </locale>
+
         <locale name="piwik.settings.id">
-            <de><![CDATA[Matomo Seiten ID]]></de>
-            <en><![CDATA[Matomo site ID]]></en>
+            <de><![CDATA[Allgemeine Seiten ID]]></de>
+            <en><![CDATA[General Site ID]]></en>
         </locale>
+
         <locale name="piwik.settings.token">
-            <de><![CDATA[Matomo OAuth Token (optional)]]></de>
-            <en><![CDATA[Matomo OAuth token (optional)]]></en>
+            <de><![CDATA[Access Token (optional)]]></de>
+            <en><![CDATA[Access Token (optional)]]></en>
+        </locale>
+
+        <locale name="piwik.settings.siteIds">
+            <de><![CDATA[Sprachspezifische Seiten IDs]]></de>
+            <en><![CDATA[Language Specific Site IDs]]></en>
         </locale>
     </groups>
 
@@ -45,8 +52,8 @@
             <en><![CDATA[Matomo]]></en>
         </locale>
         <locale name="piwik.settings.general.title">
-            <de><![CDATA[Allgemeingültige Einstellungen]]></de>
-            <en><![CDATA[Universal settings]]></en>
+            <de><![CDATA[Matomo Einstellungen]]></de>
+            <en><![CDATA[Matomo Settings]]></en>
         </locale>
         <locale name="piwik.settings.projects.title">
             <de><![CDATA[Einstellungen für einzelne Projektsprachen (überschreiben allg. Einstellungen)]]></de>
@@ -59,11 +66,26 @@
 
         <locale name="piwik.settings.url.description">
             <de><![CDATA[
-            Bitte geben Sie die Matomo-Stats URL ohne Protokoll an. Zum Beispiel: stats.server.com
+            Die URL ihres Matomo Tracking-Servers. Bitte geben Sie diese ohne Protokoll an (zum Beispiel: stats.server.com).
             ]]></de>
             <en><![CDATA[
-            Please enter the Matomo-Stats URL without protocol. For example: stats.server.com
+            The URL of your Matomo tracking-server. Please enter it without the protocol for example: stats.server.com).
             ]]></en>
+        </locale>
+
+        <locale name="piwik.settings.siteIds.description">
+            <de><![CDATA[Legen Sie individuelle Seiten IDs für jede Sprache fest (überschreibt die allgemeine Seiten ID für hier festgelegte Sprachen).]]></de>
+            <en><![CDATA[Set individual page IDs for each language (overrides the general page ID for the languages specified here).]]></en>
+        </locale>
+
+        <locale name="piwik.settings.id.description">
+            <de><![CDATA[Wird für alle Sprachen dieses Projekts genutzt, für die keine "Sprachspezifische Seiten ID" gesetzt ist.]]></de>
+            <en><![CDATA[Used for all languages of this project for which no "Language Specific Site ID" is set.]]></en>
+        </locale>
+
+        <locale name="piwik.settings.token.description">
+            <de><![CDATA[Wird zur Authentifizierung in API Anfragen verwendet. Mehr dazu <a href="https://matomo.org/faq/general/faq_114/" rel="nofollow">hier</a>.]]></de>
+            <en><![CDATA[Used for authentication in API requests. More about this <a href="https://matomo.org/faq/general/faq_114/" rel="nofollow">here</a>.]]></en>
         </locale>
 
         <locale name="user.profile.title">
