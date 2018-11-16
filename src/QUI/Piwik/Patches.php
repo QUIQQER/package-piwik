@@ -42,7 +42,7 @@ class Patches
 
                     $languageData = json_decode($langdataJSON, true);
 
-                    if (is_null($languageData) || empty ($languageData)) {
+                    if (is_null($languageData) || empty($languageData)) {
                         continue;
                     }
 

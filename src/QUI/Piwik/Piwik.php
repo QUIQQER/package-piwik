@@ -115,7 +115,7 @@ class Piwik
 
     /**
      * Returns the name of the locale group used to store the site IDs.
-     * 
+     *
      * @param Project $Project
      * @return string
      */
