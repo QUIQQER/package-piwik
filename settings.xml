@@ -65,20 +65,11 @@
                                     />
                                 </text>
                             </input>
-                        </settings>
-
-                        <settings>
-
-                            <title>
-                                <locale group="quiqqer/piwik"
-                                        var="piwik.settings.projects.title"
-                                />
-                            </title>
 
                             <input type="hidden" data-qui="package/quiqqer/piwik/bin/controls/SiteIds">
                                 <text>
                                     <locale group="quiqqer/app"
-                                            var="piwik.settings.projects.siteIds"
+                                            var="piwik.settings.siteIds"
                                     />
                                 </text>
                             </input>
