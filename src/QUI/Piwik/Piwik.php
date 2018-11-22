@@ -72,7 +72,7 @@ class Piwik
         // No value set for this language, therefore return the general ID
         // TODO: replace with the code above, if the mentioned bug is fixed.
         if (empty($siteId) || $siteId == '[' . $group . '] ' . self::LOCALE_KEY_SITE_IDS) {
-            return $Project->getConfig('piwik.settings.id');
+            return null;
         }
 
         return $siteId;
