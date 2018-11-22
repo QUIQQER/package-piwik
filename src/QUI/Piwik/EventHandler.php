@@ -19,22 +19,23 @@ class EventHandler
      */
     public static function onTemplateSiteFetch($Template, $Site)
     {
-        $Project     = $Site->getProject();
+        $Project = $Site->getProject();
+
         $piwikUrl    = $Project->getConfig('piwik.settings.url');
         $piwikSiteId = Piwik::getSiteId($Project);
 
-        $langSettings = $Project->getConfig('piwik.settings.langdata');
+        $langSettingsJSON = $Project->getConfig('piwik.settings.langdata');
 
-        if ($langSettings) {
-            $settings = json_decode($langSettings, true);
-            $lang     = $Project->getLang();
+        if (!empty($langSettingsJSON)) {
+            $langSettings = json_decode($langSettingsJSON, true);
+            $language     = $Project->getLang();
 
-            if (isset($settings[$lang])) {
-                if (isset($settings[$lang]['url'])
-                    && !empty($settings[$lang]['url'])
+            if (isset($langSettings[$language])) {
+                if (isset($langSettings[$language]['url'])
+                    && !empty($langSettings[$language]['url'])
                     && empty($piwikUrl)
                 ) {
-                    $piwikUrl = $settings[$lang]['url'];
+                    $piwikUrl = $langSettings[$language]['url'];
                 }
             }
         }
