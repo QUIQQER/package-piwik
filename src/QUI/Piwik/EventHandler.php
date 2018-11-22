@@ -92,7 +92,47 @@ class EventHandler
         }
 
         $siteIds = json_decode($params['matomo.siteIds'], true);
-
         Piwik::setSiteIds($siteIds, $Project);
+
+
+        // region Remove language specific URLs if general URL is set
+        if (!isset($params['piwik.settings.url'])) {
+            return;
+        }
+
+        try {
+            $ProjectsConfig = QUI\Projects\Manager::getConfig();
+        } catch (QUI\Exception $Exception) {
+            return;
+        }
+
+        $projectName = $Project->getName();
+        $settingKey  = 'piwik.settings.langdata';
+
+        // Get the language data
+        $languageDataJSON = $ProjectsConfig->getValue($projectName, $settingKey);
+        if (empty($languageDataJSON)) {
+            return;
+        }
+
+        $languageData = json_decode($languageDataJSON, true);
+        if (empty($languageData)) {
+            return;
+        }
+
+        // Remove all URLs
+        foreach ($languageData as $language => $data) {
+            unset($languageData[$language]['url']);
+        }
+
+        // Set the new config value
+        $ProjectsConfig->setValue($projectName, $settingKey, json_encode($languageData));
+
+        try {
+            $ProjectsConfig->save();
+        } catch (QUI\Exception $Exception) {
+            return;
+        }
+        // endregion
     }
 }
