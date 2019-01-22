@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
     <event on="onTemplateSiteFetch" fire="\QUI\Piwik\EventHandler::onTemplateSiteFetch" />
+    <event on="onPackageUpdate" fire="\QUI\Piwik\EventHandler::onPackageUpdate" />
+    <event on="onProjectConfigSave" fire="QUI\Piwik\EventHandler::onProjectConfigSave"/>
 </events>
 

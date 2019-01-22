@@ -77,7 +77,6 @@ define('package/quiqqer/piwik/bin/Settings', [
                     tplData.push({
                         lang         : lang,
                         flag         : URL_BIN_DIR + '16x16/flags/' + lang + '.png',
-                        piwikUrlTitle: QUILocale.get(lg, 'piwik.settings.url'),
                         piwikIdTitle : QUILocale.get(lg, 'piwik.settings.id')
                     });
                 });
@@ -102,10 +101,6 @@ define('package/quiqqer/piwik/bin/Settings', [
 
                         if (!value || !(lang in value)) {
                             return;
-                        }
-
-                        if (Node.get('name') === 'url') {
-                            Node.value = value[lang].url;
                         }
 
                         if (Node.get('name') === 'id') {
@@ -167,10 +162,6 @@ define('package/quiqqer/piwik/bin/Settings', [
 
                 if (!(lang in data)) {
                     data[lang] = {};
-                }
-
-                if (Node.get('name') === 'url') {
-                    data[lang].url = Node.value;
                 }
 
                 if (Node.get('name') === 'id') {

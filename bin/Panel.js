@@ -121,7 +121,7 @@ define('package/quiqqer/piwik/bin/Panel', [
                     if (url === '' || id === '') {
                         new Element('div', {
                             'class': 'quiqqer-piwik-panel-nosettings',
-                            html   : 'Fehlende Piwik Settings'
+                            html   : QUILocale.get(lg, 'panel.error.settings.missing')
                         }).inject(this.getContent());
 
                         this.Loader.hide();
@@ -139,22 +139,25 @@ define('package/quiqqer/piwik/bin/Panel', [
                         date  : 'yesterday'
                     };
 
-                    var now    = new Date().getTime(),
-                        opened = parseInt(QUI.Storage.remove('piwik-opened'));
+                    var now                = new Date().getTime(),
+                        opened             = parseInt(QUI.Storage.remove('piwik-opened')),
+                        usersPiwikLogin    = User.getAttribute('quiqqer.piwik.login'),
+                        usersPiwikPassword = User.getAttribute('quiqqer.piwik.pass');
 
                     if (!opened) {
                         opened = 0;
                     }
 
-                    console.log(opened);
+                    if (!usersPiwikLogin && !usersPiwikPassword) {
+                        QUI.getMessageHandler().then(function (MH) {
+                            MH.addInformation(QUILocale.get(lg, 'panel.notice.userdata.missing'));
+                        });
+                    }
 
-                    if (User.getAttribute('quiqqer.piwik.pass') &&
-                        User.getAttribute('quiqqer.piwik.login') &&
-                        parseInt(QUI.Storage.get('piwik-opened')) + 7200 < now) {
-
+                    if (usersPiwikPassword && usersPiwikLogin && opened + 7200 < now) {
                         frameParams.module   = 'Login';
                         frameParams.action   = 'logme';
-                        frameParams.login    = User.getAttribute('quiqqer.piwik.login');
+                        frameParams.login    = usersPiwikLogin;
                         frameParams.password = pass;
                     }
 
