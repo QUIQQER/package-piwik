@@ -60,7 +60,19 @@
 
                 look();
             });
+        });
 
+        // add global quiqqer events
+        require(['qui/QUI', 'piwikTracker'], function (QUI, Tracker) {
+            QUI.addEvent('onQuiqqerUserAuthLoginSuccess', function () {
+                Tracker.setCustomUrl('/login');
+                Tracker.trackPageView();
+            });
+
+            QUI.addEvent('onQuiqqerUserAuthLogout', function () {
+                Tracker.setCustomUrl('/logout');
+                Tracker.trackPageView();
+            });
         });
     }
 </script>
