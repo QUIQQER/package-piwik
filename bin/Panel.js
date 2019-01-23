@@ -166,7 +166,7 @@ define('package/quiqqer/piwik/bin/Panel', [
 
                     url = url.replace('https://', '').replace('http://', '');
 
-                    var src = 'https://' + url + '/index.php?' + Object.toQueryString(frameParams);
+                    var src = '//' + url + '/index.php?' + Object.toQueryString(frameParams);
 
                     new Element('iframe', {
                         src   : src,
