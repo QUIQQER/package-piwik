@@ -38,7 +38,7 @@
                                 />
                             </title>
 
-                            <input conf="piwik.settings.url">
+                            <input conf="piwik.settings.url" type="url">
                                 <text>
                                     <locale group="quiqqer/piwik"
                                             var="piwik.settings.url"
