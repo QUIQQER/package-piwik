@@ -63,15 +63,23 @@
         });
 
         // add global quiqqer events
-        require(['qui/QUI', 'piwikTracker'], function (QUI, Tracker) {
+        require(['qui/QUI'], function (QUI) {
             QUI.addEvent('onQuiqqerUserAuthLoginSuccess', function () {
-                Tracker.setCustomUrl('/login');
-                Tracker.trackPageView();
+                require(['piwikTracker'], function (piwikTracker) {
+                    piwikTracker.then(function (Tracker) {
+                        Tracker.setCustomUrl('/login');
+                        Tracker.trackPageView();
+                    });
+                });
             });
 
             QUI.addEvent('onQuiqqerUserAuthLogout', function () {
-                Tracker.setCustomUrl('/logout');
-                Tracker.trackPageView();
+                require(['piwikTracker'], function (piwikTracker) {
+                    piwikTracker.then(function (Tracker) {
+                        Tracker.setCustomUrl('/login');
+                        Tracker.trackPageView();
+                    });
+                });
             });
         });
     }
