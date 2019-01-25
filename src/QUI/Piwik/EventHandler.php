@@ -91,9 +91,10 @@ class EventHandler
             return;
         }
 
-        $siteIds = json_decode($params['matomo.siteIds'], true);
-        Piwik::setSiteIds($siteIds, $Project);
-
+        if (isset($params['matomo.siteIds'])) {
+            $siteIds = json_decode($params['matomo.siteIds'], true);
+            Piwik::setSiteIds($siteIds, $Project);
+        }
 
         // region Remove language specific URLs if general URL is set
         if (!isset($params['piwik.settings.url'])) {
