@@ -3,6 +3,8 @@
     _paq.push(["trackPageView"]);
     _paq.push(["enableLinkTracking"]);
 
+    var eCommerce = {$eCommerce};
+
     (function () {
         var u = "//{$piwikUrl}/";
         _paq.push(["setTrackerUrl", u + "js/"]);
@@ -81,6 +83,11 @@
                     });
                 });
             });
+
+            if (eCommerce) {
+                require(['package/quiqqer/piwik/bin/eCommerceTracking']);
+            }
+
         });
     }
 </script>
