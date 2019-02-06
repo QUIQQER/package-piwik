@@ -25,7 +25,7 @@ QUI::$Ajax->registerFunction(
         }
 
         $Locale = QUI::getLocale();
-        $List   = $Basket->getProducts();;
+        $List   = $Basket->getProducts();
 
         $list     = $List->toArray();
         $products = $list['products'];
@@ -85,7 +85,6 @@ QUI::$Ajax->registerFunction(
         $result['currencyData'] = $list['currencyData'];
 
         return $result;
-
     },
     ['basketId']
 );
