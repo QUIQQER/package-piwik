@@ -52,13 +52,14 @@ class EventHandler
             return;
         }
 
-        $Engine->assign(array(
+        $Engine->assign([
             'piwikUrl'    => $piwikUrl,
-            'piwikSideId' => $piwikSiteId
-        ));
+            'piwikSideId' => $piwikSiteId,
+            'eCommerce'   => QUI::getPackageManager()->isInstalled('quiqqer/order')
+        ]);
 
         $Template->extendFooter(
-            $Engine->fetch(dirname(__FILE__) . '/piwik.html')
+            $Engine->fetch(dirname(__FILE__).'/piwik.html')
         );
     }
 
