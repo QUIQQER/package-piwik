@@ -185,6 +185,24 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
     }
 
     /**
+     * tracks the start of a deletion process from an user
+     */
+    function trackUserDeleteStart() {
+        piwikTracker.then(function (Tracker) {
+            Tracker.trackPageView('/profile/delete/start');
+        });
+    }
+
+    /**
+     * tracks the success of a deletion from an user
+     */
+    function trackUserDelete() {
+        piwikTracker.then(function (Tracker) {
+            Tracker.trackPageView('/profile/delete/success');
+        });
+    }
+
+    /**
      * TRACKING
      */
 
@@ -255,5 +273,25 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
         piwikTracker.then(function (Tracker) {
             Tracker.trackPageView('/register/success');
         });
+    });
+
+    // deletion tracking
+    if (QUI.getAttribute('QUIQQER_FRONTEND_USERS_ACCOUNT_DELETE_START')) {
+        trackUserDeleteStart();
+    }
+
+    if (QUI.getAttribute('QUIQQER_VERIFIER_SUCCESS')) {
+        var verifier = QUI.getAttribute('QUIQQER_VERIFIER_SUCCESS');
+
+        if (verifier === 'QUIFrontendUsersUserDeleteConfirmVerification') {
+            trackUserDelete();
+        }
+    }
+
+    QUI.addEvent('quiqqerFrontendUsersAccountDeleteStart', trackUserDeleteStart);
+    QUI.addEvent('quiqqerVerifierSuccess', function (verifier) {
+        if (verifier === 'QUIFrontendUsersUserDeleteConfirmVerification') {
+            trackUserDelete();
+        }
     });
 });
