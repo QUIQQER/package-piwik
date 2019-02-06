@@ -242,4 +242,18 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
     QUI.addEvent('onQuiqqerOrderProcessFinish', function (orderHash) {
         trackOrder(orderHash);
     });
+
+
+    // registration tracking
+    QUI.addEvent('onQuiqqerFrontendUsersRegisterStart', function () {
+        piwikTracker.then(function (Tracker) {
+            Tracker.trackPageView('/register/start');
+        });
+    });
+
+    QUI.addEvent('onQuiqqerFrontendUsersRegisterSuccess', function () {
+        piwikTracker.then(function (Tracker) {
+            Tracker.trackPageView('/register/success');
+        });
+    });
 });
