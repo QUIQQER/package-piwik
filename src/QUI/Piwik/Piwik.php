@@ -119,7 +119,7 @@ class Piwik
      * @param Project $Project
      * @return string
      */
-    private static function getLocaleGroup(Project $Project): string
+    private static function getLocaleGroup(Project $Project)
     {
         return 'project/'.$Project->getName();
     }
