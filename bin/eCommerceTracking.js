@@ -52,6 +52,10 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
                 Tracker  = result[1],
                 products = data.products;
 
+            if (!products || !products.length) {
+                return;
+            }
+
             for (i = 0, len = products.length; i < len; i++) {
                 product = products[i];
 
