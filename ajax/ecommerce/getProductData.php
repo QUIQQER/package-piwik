@@ -17,7 +17,8 @@ QUI::$Ajax->registerFunction(
     'package_quiqqer_piwik_ajax_ecommerce_getProductData',
     function ($productId) {
         try {
-            $Product = Products::getProduct($productId);
+            $productId = (int)$productId;
+            $Product   = Products::getProduct($productId);
 
             return [
                 'productNo' => $Product->getField(Fields::FIELD_PRODUCT_NO)->getValue(),
@@ -29,5 +30,5 @@ QUI::$Ajax->registerFunction(
             return '';
         }
     },
-    ['project', 'siteId']
+    ['productId']
 );
