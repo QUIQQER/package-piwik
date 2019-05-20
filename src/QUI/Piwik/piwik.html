@@ -65,29 +65,36 @@
         });
 
         // add global quiqqer events
-        require(['qui/QUI'], function (QUI) {
-            QUI.addEvent('onQuiqqerUserAuthLoginSuccess', function () {
-                require(['piwikTracker'], function (piwikTracker) {
-                    piwikTracker.then(function (Tracker) {
-                        Tracker.setCustomUrl('/login');
-                        Tracker.trackPageView();
+        var loadQUI = Promise.resolve();
+
+        if (typeof whenQuiLoaded !== 'undefined') {
+            loadQUI = whenQuiLoaded;
+        }
+
+        loadQUI().then(function () {
+            require(['qui/QUI'], function (QUI) {
+                QUI.addEvent('onQuiqqerUserAuthLoginSuccess', function () {
+                    require(['piwikTracker'], function (piwikTracker) {
+                        piwikTracker.then(function (Tracker) {
+                            Tracker.setCustomUrl('/login');
+                            Tracker.trackPageView();
+                        });
                     });
                 });
-            });
 
-            QUI.addEvent('onQuiqqerUserAuthLogout', function () {
-                require(['piwikTracker'], function (piwikTracker) {
-                    piwikTracker.then(function (Tracker) {
-                        Tracker.setCustomUrl('/login');
-                        Tracker.trackPageView();
+                QUI.addEvent('onQuiqqerUserAuthLogout', function () {
+                    require(['piwikTracker'], function (piwikTracker) {
+                        piwikTracker.then(function (Tracker) {
+                            Tracker.setCustomUrl('/login');
+                            Tracker.trackPageView();
+                        });
                     });
                 });
+
+                if (eCommerce) {
+                    require(['package/quiqqer/piwik/bin/eCommerceTracking']);
+                }
             });
-
-            if (eCommerce) {
-                require(['package/quiqqer/piwik/bin/eCommerceTracking']);
-            }
-
         });
     }
 </script>
