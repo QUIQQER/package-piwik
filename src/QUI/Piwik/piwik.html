@@ -65,9 +65,11 @@
         });
 
         // add global quiqqer events
-        var loadQUI = Promise.resolve();
+        var loadQUI = function () {
+            return Promise.resolve();
+        };
 
-        if (typeof whenQuiLoaded !== 'undefined') {
+        if (typeof whenQuiLoaded === 'function') {
             loadQUI = whenQuiLoaded;
         }
 
@@ -95,6 +97,8 @@
                     require(['package/quiqqer/piwik/bin/eCommerceTracking']);
                 }
             });
+        }).catch(function (e) {
+            console.error(e);
         });
     }
 </script>
