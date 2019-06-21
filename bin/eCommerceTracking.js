@@ -248,11 +248,21 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
     // trackEcommerceOrder
 
     QUI.addEvent('onQuiqqerOrderProcessOpenStep', function (OrderProcess, step) {
-        var url = QUIQQER_SITE.url + '/' + step;
+        var url = '/' + step;
+
+        if (QUIQQER_SITE.url !== '' && QUIQQER_SITE.url !== '/') {
+            url = QUIQQER_SITE.url + url;
+        }
+
+        if (DEBUG) {
+            console.log('track order process step', url);
+        }
 
         piwikTracker.then(function (Tracker) {
             Tracker.trackPageView(url);
         });
+
+        trackOrder(OrderProcess.getAttribute('orderHash'));
     });
 
     if (QUI.getAttribute('QUIQQER_ORDER_CHECKOUT_FINISH')) {
@@ -263,6 +273,14 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
 
     QUI.addEvent('onQuiqqerOrderProcessFinish', function (orderHash) {
         trackOrder(orderHash);
+    });
+
+    QUI.addEvent('onQuiqqerOrderProcessLoad', function (OrderProcess) {
+        if (DEBUG) {
+            console.log('track order process load ->');
+        }
+
+        trackOrder(OrderProcess.getAttribute('orderHash'));
     });
 
 
