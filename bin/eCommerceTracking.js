@@ -30,6 +30,8 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
                         orderHash: orderHash
                     });
                 });
+
+                return;
             }
 
             require(['package/quiqqer/order/bin/frontend/Basket'], function (Basket) {
