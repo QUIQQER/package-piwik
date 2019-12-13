@@ -21,8 +21,17 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
      *
      * @return {Promise}
      */
-    function getTrackData() {
+    function getTrackData(OrderProcess) {
         return new Promise(function (resolve) {
+            if (typeof OrderProcess !== 'undefined') {
+                OrderProcess.getOrder().then(function (orderHash) {
+                    QUIAjax.get('package_quiqqer_piwik_ajax_ecommerce_getTrackDataForOrderProcess', resolve, {
+                        'package': 'quiqqer/piwik',
+                        orderHash: orderHash
+                    });
+                });
+            }
+
             require(['package/quiqqer/order/bin/frontend/Basket'], function (Basket) {
                 QUIAjax.get('package_quiqqer_piwik_ajax_ecommerce_getTrackData', resolve, {
                     'package': 'quiqqer/piwik',
@@ -37,13 +46,13 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
      *
      * @return {Promise}
      */
-    function track() {
+    function track(OrderProcess) {
         if (DEBUG) {
             console.log('track basket');
         }
 
         return Promise.all([
-            getTrackData(),
+            getTrackData(OrderProcess),
             piwikTracker
         ]).then(function (result) {
             var i, len, product;
@@ -283,6 +292,16 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
         }
 
         track().catch(function (err) {
+            console.error(err);
+        });
+    });
+
+    QUI.addEvent('onQuiqqerOrderProductAdd', function (OrderProcess) {
+        if (DEBUG) {
+            console.log('track order process load ->');
+        }
+
+        track(OrderProcess).catch(function (err) {
             console.error(err);
         });
     });
