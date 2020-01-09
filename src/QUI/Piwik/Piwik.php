@@ -27,6 +27,10 @@ class Piwik
         $piwikUrl    = $Project->getConfig('piwik.settings.url');
         $piwikSideId = $Project->getConfig('piwik.settings.id');
 
+        if (\mb_strpos($piwikUrl, '://') === false) {
+            $piwikUrl = 'https://'.$piwikUrl;
+        }
+
         $Piwik = new \PiwikTracker($piwikSideId, $piwikUrl);
 
         if ($Project->getConfig('piwik.settings.token')) {
