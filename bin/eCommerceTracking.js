@@ -24,6 +24,20 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
     function getTrackData(OrderProcess) {
         return new Promise(function (resolve) {
             if (typeof OrderProcess !== 'undefined') {
+                if (typeOf(OrderProcess) === 'package/quiqqer/order/bin/frontend/classes/Basket') {
+                    var Node = document.getElement('[data-qui="package/quiqqer/order/bin/frontend/controls/OrderProcess"]');
+
+                    if (!Node) {
+                        return resolve([]);
+                    }
+
+                    OrderProcess = QUI.Controls.getById(Node.get('data-quiid'));
+
+                    if (!OrderProcess) {
+                        return resolve([]);
+                    }
+                }
+
                 OrderProcess.getOrder().then(function (orderHash) {
                     QUIAjax.get('package_quiqqer_piwik_ajax_ecommerce_getTrackDataForOrderProcess', resolve, {
                         'package': 'quiqqer/piwik',
