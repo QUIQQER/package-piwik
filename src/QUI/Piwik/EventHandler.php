@@ -63,19 +63,19 @@ class EventHandler
         );
     }
 
-
     /**
      * Fired when updating the package
      *
      * @param QUI\Package\Package $Package
      */
+    /*
     public static function onPackageUpdate(QUI\Package\Package $Package)
     {
         if ($Package->getName() == 'quiqqer/piwik') {
             Patches::moveSiteIdsToLocaleVariables();
         }
     }
-
+    */
 
     /**
      * Listens to project config save
