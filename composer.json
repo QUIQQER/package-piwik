@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "QUI\\Piwik\\": "src\/QUI\/Piwik\/"
+            "QUI\\Piwik\\": "src\/QUI\/Piwik"
         }
     }
 }
