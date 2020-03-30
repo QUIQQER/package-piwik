@@ -25,6 +25,10 @@ QUI::$Ajax->registerFunction(
 
             $Order    = $OrderProcess->getOrder();
             $Articles = $Order->getArticles();
+
+            if (!$Articles) {
+                return [];
+            }
         } catch (QUI\Exception $Exception) {
             return [];
         }
