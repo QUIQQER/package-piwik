@@ -100,5 +100,64 @@
             <de><![CDATA[Matomo Benutzername]]></de>
             <en><![CDATA[Matomo username]]></en>
         </locale>
+
+        <!-- region cookies -->
+        <locale name="cookie.id.purpose">
+            <de><![CDATA[Wird verwendet, um Details über den Benutzer zu speichern (z.B. eine eindeutige Besucher-ID)]]></de>
+            <en><![CDATA[Used to store details about the user (e.g. a unique visitor ID)]]></en>
+        </locale>
+
+        <locale name="cookie.ref.purpose">
+            <de><![CDATA[Wird verwendet, um Zuordnungsinformationen zu speichern (z.B. der Referrer, der ursprünglich auf die Seite geführt hat).]]></de>
+            <en><![CDATA[Used to store the attribution information (e.g. the referrer initially used to visit the website).]]></en>
+        </locale>
+
+        <locale name="cookie.ses.purpose">
+            <de><![CDATA[Wird verwendet, um Daten für den Besuch vorübergehend zu speichern.]]></de>
+            <en><![CDATA[Used to temporarily store data for the visit.]]></en>
+        </locale>
+
+        <locale name="cookie.cvar.purpose">
+            <de><![CDATA[Wird verwendet, um Daten für den Besuch vorübergehend zu speichern.]]></de>
+            <en><![CDATA[Used to temporarily store data for the visit.]]></en>
+        </locale>
+
+        <locale name="cookie.hsr.purpose">
+            <de><![CDATA[Wird verwendet, um Daten für den Besuch vorübergehend zu speichern.]]></de>
+            <en><![CDATA[Used to temporarily store data for the visit.]]></en>
+        </locale>
+
+        <locale name="cookie.test.purpose">
+            <de><![CDATA[Wird verwendet, um zu prüfen, ob der Browser des Besuchers Cookies unterstützt.]]></de>
+            <en><![CDATA[Used to check whether the visitor’s browser supports cookies.]]></en>
+        </locale>
+
+        <locale name="cookie.consent.purpose">
+            <de><![CDATA[Wird verwendet, um sich daran zu erinnern, dass die Zustimmung durch den Benutzer gegeben wurde.]]></de>
+            <en><![CDATA[Used to remember that consent was given by the user.]]></en>
+        </locale>
+        <locale name="cookie.consent.lifetime">
+            <de><![CDATA[Unbegrenzt]]></de>
+            <en><![CDATA[Unlimited]]></en>
+        </locale>
+
+        <locale name="cookie.ignore.purpose">
+            <de><![CDATA[Kennzeichnet den Benutzer als vom Tracking ignoriert.]]></de>
+            <en><![CDATA[Flags the user as ignored from tracking.]]></en>
+        </locale>
+        <locale name="cookie.ignore.lifetime">
+            <de><![CDATA[Unbegrenzt]]></de>
+            <en><![CDATA[Unlimited]]></en>
+        </locale>
+
+        <locale name="cookie.sessid.purpose">
+            <de><![CDATA[Wird erstellt, wenn die Opt-Out-Funktion verwendet wird. Hilft bei der Vermeidung von CSRF-Sicherheitsproblemen.]]></de>
+            <en><![CDATA[Created when opt-out feature is used. Helps prevent CSRF security issues.]]></en>
+        </locale>
+        <locale name="cookie.sessid.lifetime">
+            <de><![CDATA[Temporär]]></de>
+            <en><![CDATA[Temporary]]></en>
+        </locale>
+        <!-- endregion -->
     </groups>
 </locales>
