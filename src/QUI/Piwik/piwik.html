@@ -1,17 +1,24 @@
 <script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(["trackPageView"]);
-    _paq.push(["enableLinkTracking"]);
+    var _paq      = _paq || [],
+        eCommerce = {$eCommerce};
 
-    var eCommerce = {$eCommerce};
+    {if $isGdprInstalled}
+        GDPR.waitForCookieCategoryAcceptance('statistics').then(initMatomo);
+    {else}
+        initMatomo();
+    {/if}
 
-    (function () {
+    function initMatomo() {
         var u = "//{$piwikUrl}/";
+
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
         _paq.push(["setTrackerUrl", u + "js/"]);
         _paq.push(["setSiteId", parseInt("{$piwikSideId}")]);
 
-        var d = document, g = d.createElement("script"),
-            s               = d.getElementsByTagName("script")[0];
+        var d = document,
+            g = d.createElement("script"),
+            s = d.getElementsByTagName("script")[0];
 
         g.type  = "text/javascript";
         g.async = true;
@@ -19,86 +26,86 @@
         g.src   = u + "js/";
 
         s.parentNode.insertBefore(g, s);
-    })();
 
-    if (typeof define === 'function') {
-        window.QUIQQER_PIWIK = true;
+        if (typeof define === 'function') {
+            window.QUIQQER_PIWIK = true;
 
-        define('piwikTracker', function () {
-            var Tracker = null;
+            define('piwikTracker', function () {
+                var Tracker = null;
 
-            var setPiwikData = function () {
-                Tracker = Piwik.getAsyncTracker();
-                var u   = "//{$piwikUrl}/";
+                var setPiwikData = function () {
+                    Tracker = Piwik.getAsyncTracker();
+                    var u   = "//{$piwikUrl}/";
 
-                Tracker.setTrackerUrl(u + "js/");
-                Tracker.setSiteId(parseInt("{$piwikSideId}"));
+                    Tracker.setTrackerUrl(u + "js/");
+                    Tracker.setSiteId(parseInt("{$piwikSideId}"));
 
-                Tracker.setDocumentTitle(
-                    document.domain + "/" + document.title
-                );
+                    Tracker.setDocumentTitle(
+                        document.domain + "/" + document.title
+                    );
 
-                Tracker.enableLinkTracking();
-            };
-
-            return new Promise(function (resolve) {
-                if (typeof window.Piwik !== 'undefined') {
-                    setPiwikData();
-                    resolve(Tracker);
-                    return;
-                }
-
-                var look = function () {
-                    setTimeout(function () {
-                        if (typeof window.Piwik !== 'undefined') {
-                            setPiwikData();
-                            resolve(Tracker);
-                            return;
-                        }
-
-                        look();
-                    }, 100);
+                    Tracker.enableLinkTracking();
                 };
 
-                look();
+                return new Promise(function (resolve) {
+                    if (typeof window.Piwik !== 'undefined') {
+                        setPiwikData();
+                        resolve(Tracker);
+                        return;
+                    }
+
+                    var look = function () {
+                        setTimeout(function () {
+                            if (typeof window.Piwik !== 'undefined') {
+                                setPiwikData();
+                                resolve(Tracker);
+                                return;
+                            }
+
+                            look();
+                        }, 100);
+                    };
+
+                    look();
+                });
             });
-        });
 
-        // add global quiqqer events
-        var loadQUI = function () {
-            return Promise.resolve();
-        };
+            // add global quiqqer events
+            var loadQUI = function () {
+                return Promise.resolve();
+            };
 
-        if (typeof whenQuiLoaded === 'function') {
-            loadQUI = whenQuiLoaded;
+            if (typeof whenQuiLoaded === 'function') {
+                loadQUI = whenQuiLoaded;
+            }
+
+            loadQUI().then(function () {
+                require(['qui/QUI'], function (QUI) {
+                    QUI.addEvent('onQuiqqerUserAuthLoginSuccess', function () {
+                        require(['piwikTracker'], function (piwikTracker) {
+                            piwikTracker.then(function (Tracker) {
+                                Tracker.setCustomUrl('/login');
+                                Tracker.trackPageView();
+                            });
+                        });
+                    });
+
+                    QUI.addEvent('onQuiqqerUserAuthLogout', function () {
+                        require(['piwikTracker'], function (piwikTracker) {
+                            piwikTracker.then(function (Tracker) {
+                                Tracker.setCustomUrl('/login');
+                                Tracker.trackPageView();
+                            });
+                        });
+                    });
+
+                    if (eCommerce) {
+                        require(['package/quiqqer/piwik/bin/eCommerceTracking']);
+                    }
+                });
+            }).catch(function (e) {
+                console.error(e);
+            });
         }
-
-        loadQUI().then(function () {
-            require(['qui/QUI'], function (QUI) {
-                QUI.addEvent('onQuiqqerUserAuthLoginSuccess', function () {
-                    require(['piwikTracker'], function (piwikTracker) {
-                        piwikTracker.then(function (Tracker) {
-                            Tracker.setCustomUrl('/login');
-                            Tracker.trackPageView();
-                        });
-                    });
-                });
-
-                QUI.addEvent('onQuiqqerUserAuthLogout', function () {
-                    require(['piwikTracker'], function (piwikTracker) {
-                        piwikTracker.then(function (Tracker) {
-                            Tracker.setCustomUrl('/login');
-                            Tracker.trackPageView();
-                        });
-                    });
-                });
-
-                if (eCommerce) {
-                    require(['package/quiqqer/piwik/bin/eCommerceTracking']);
-                }
-            });
-        }).catch(function (e) {
-            console.error(e);
-        });
     }
 </script>

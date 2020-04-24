@@ -21,6 +21,9 @@
         "piwik\/piwik-php-tracker": "1.*",
         "npm-asset\/mustache": "2.*"
     },
+    "suggest": {
+        "quiqqer/gdpr": "Enables Matomo tracking only if the user consented to cookies (GDPR-compliance)."
+    },
     "autoload": {
         "psr-4": {
             "QUI\\Piwik\\": "src\/QUI\/Piwik"
