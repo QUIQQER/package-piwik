@@ -158,6 +158,43 @@
             <de><![CDATA[Temporär]]></de>
             <en><![CDATA[Temporary]]></en>
         </locale>
+
+        <!-- region Cookie Settings -->
+        <locale name="piwik.settings.cookies.title">
+            <de><![CDATA[Matomo Cookie Einstellungen]]></de>
+            <en><![CDATA[Matomo Cookie Settings]]></en>
+        </locale>
+
+        <locale name="piwik.settings.cookiecategory">
+            <de><![CDATA[Cookie Kategorie]]></de>
+            <en><![CDATA[Cookie Category]]></en>
+        </locale>
+
+        <locale name="piwik.settings.cookiecategory.description">
+            <de><![CDATA[Nur relevant, wenn quiqqer/gdpr installiert ist. Legt die Kategorie fest, denen die Matomo-Cookies angehören.]]></de>
+            <en><![CDATA[Only relevant if quiqqer/gdpr is installed. Defines the category to which the Matomo cookies belong.]]></en>
+        </locale>
+
+        <locale name="piwik.settings.cookiecategory.essential">
+            <de><![CDATA[Essenziell]]></de>
+            <en><![CDATA[Essential]]></en>
+        </locale>
+
+        <locale name="piwik.settings.cookiecategory.preferences">
+            <de><![CDATA[Präferenzen]]></de>
+            <en><![CDATA[Preferences]]></en>
+        </locale>
+
+        <locale name="piwik.settings.cookiecategory.statistics">
+            <de><![CDATA[Statistiken]]></de>
+            <en><![CDATA[Statistics]]></en>
+        </locale>
+
+        <locale name="piwik.settings.cookiecategory.marketing">
+            <de><![CDATA[Marketing]]></de>
+            <en><![CDATA[Marketing]]></en>
+        </locale>
+        <!-- endregion -->
         <!-- endregion -->
     </groups>
 </locales>

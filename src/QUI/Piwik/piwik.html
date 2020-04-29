@@ -5,7 +5,7 @@
     (function() {
         var u = "//{$piwikUrl}/";
 
-        if (typeof GDPR !== 'undefined' && !GDPR.isCookieCategoryAccepted('statistics')) {
+        if (typeof GDPR !== 'undefined' && !GDPR.isCookieCategoryAccepted('{$cookieCategory}')) {
             _paq.push(['disableCookies']);
         }
 

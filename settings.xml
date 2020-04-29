@@ -17,6 +17,10 @@
                     <conf name="langdata">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="cookiecategory">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue><![CDATA[statistics]]></defaultvalue>
+                    </conf>
                 </section>
             </config>
 
@@ -88,6 +92,33 @@
                                     />
                                 </description>
                             </input>
+                        </settings>
+
+                        <settings>
+                            <title>
+                                <locale group="quiqqer/piwik" var="piwik.settings.cookies.title"/>
+                            </title>
+
+                            <select conf="piwik.settings.cookiecategory">
+                                <text>
+                                    <locale group="quiqqer/piwik" var="piwik.settings.cookiecategory"/>
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/piwik" var="piwik.settings.cookiecategory.description"/>
+                                </description>
+                                <option value="essential">
+                                    <locale group="quiqqer/piwik" var="piwik.settings.cookiecategory.essential"/>
+                                </option>
+                                <option value="preferences">
+                                    <locale group="quiqqer/piwik" var="piwik.settings.cookiecategory.preferences"/>
+                                </option>
+                                <option value="statistics">
+                                    <locale group="quiqqer/piwik" var="piwik.settings.cookiecategory.statistics"/>
+                                </option>
+                                <option value="marketing">
+                                    <locale group="quiqqer/piwik" var="piwik.settings.cookiecategory.marketing"/>
+                                </option>
+                            </select>
                         </settings>
                     </category>
                 </categories>

@@ -55,7 +55,8 @@ class EventHandler
         $Engine->assign([
             'piwikUrl'        => $piwikUrl,
             'piwikSideId'     => $piwikSiteId,
-            'eCommerce'       => QUI::getPackageManager()->isInstalled('quiqqer/order') ? 1 : 0
+            'eCommerce'       => QUI::getPackageManager()->isInstalled('quiqqer/order') ? 1 : 0,
+            'cookieCategory'  => CookieUtils::getCookieCategorySetting()
         ]);
 
         $Template->extendFooter(
