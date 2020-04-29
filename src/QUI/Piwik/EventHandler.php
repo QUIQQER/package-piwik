@@ -56,7 +56,7 @@ class EventHandler
             'piwikUrl'        => $piwikUrl,
             'piwikSideId'     => $piwikSiteId,
             'eCommerce'       => QUI::getPackageManager()->isInstalled('quiqqer/order') ? 1 : 0,
-            'isGdprInstalled' => QUI::getPackageManager()->isInstalled('quiqqer/gdpr') ? 1 : 0
+            'cookieCategory'  => CookieUtils::getCookieCategorySetting()
         ]);
 
         $Template->extendFooter(

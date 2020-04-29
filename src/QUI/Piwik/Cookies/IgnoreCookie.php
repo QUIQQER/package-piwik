@@ -7,6 +7,7 @@ namespace QUI\Piwik\Cookies;
 
 use QUI;
 use QUI\GDPR\CookieInterface;
+use QUI\Piwik\CookieUtils;
 
 /**
  * Class QuiqqerSessionCookie
@@ -56,6 +57,6 @@ class IgnoreCookie implements CookieInterface
      */
     public function getCategory(): string
     {
-        return static::COOKIE_CATEGORY_STATISTICS;
+        return CookieUtils::getCookieCategorySetting();
     }
 }

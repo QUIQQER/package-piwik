@@ -16,13 +16,13 @@
         "url": "http:\/\/www.pcsg.de"
     },
     "require": {
-        "php": ">=5.3",
+        "php": ">=7",
         "quiqqer\/quiqqer": "*@dev",
         "piwik\/piwik-php-tracker": "1.*",
         "npm-asset\/mustache": "2.*"
     },
     "suggest": {
-        "quiqqer/gdpr": "Enables Matomo tracking only if the user consented to cookies (GDPR-compliance)."
+        "quiqqer/gdpr": "Makes Matomo integration GDPR-compliant, by preventing cookies until the user consented to them."
     },
     "autoload": {
         "psr-4": {

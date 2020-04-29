@@ -2,14 +2,12 @@
     var _paq      = _paq || [],
         eCommerce = {$eCommerce};
 
-    {if $isGdprInstalled}
-        GDPR.waitForCookieCategoryAcceptance('statistics').then(initMatomo);
-    {else}
-        initMatomo();
-    {/if}
-
-    function initMatomo() {
+    (function() {
         var u = "//{$piwikUrl}/";
+
+        if (typeof GDPR !== 'undefined' && !GDPR.isCookieCategoryAccepted('{$cookieCategory}')) {
+            _paq.push(['disableCookies']);
+        }
 
         _paq.push(["trackPageView"]);
         _paq.push(["enableLinkTracking"]);
@@ -107,5 +105,5 @@
                 console.error(e);
             });
         }
-    }
+    })();
 </script>
