@@ -23,7 +23,12 @@ QUI::$Ajax->registerFunction(
                 'orderHash' => $orderHash
             ]);
 
-            $Order    = $OrderProcess->getOrder();
+            $Order = $OrderProcess->getOrder();
+
+            if (!$Order) {
+                return [];
+            }
+
             $Articles = $Order->getArticles();
 
             if (!$Articles) {
