@@ -143,11 +143,11 @@ define('package/quiqqer/piwik/bin/eCommerceTracking', [
 
                 try {
                     Tracker.setEcommerceView(productNo, title, category, price);
+                    Tracker.setCustomUrl(product.url);
                     Tracker.trackPageView();
                 } catch (e) {
                     console.error(e);
                 }
-
             }, {
                 'package': 'quiqqer/piwik',
                 productId: productId

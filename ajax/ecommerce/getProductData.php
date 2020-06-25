@@ -24,7 +24,8 @@ QUI::$Ajax->registerFunction(
                 'productNo' => $Product->getField(Fields::FIELD_PRODUCT_NO)->getValue(),
                 'title'     => $Product->getTitle(),
                 'category'  => $Product->getCategory()->getTitle(),
-                'price'     => $Product->getPrice()->getPrice()
+                'price'     => $Product->getPrice()->getPrice(),
+                'url'       => $Product->getUrl()
             ];
         } catch (QUI\Exception $Exception) {
             return '';
